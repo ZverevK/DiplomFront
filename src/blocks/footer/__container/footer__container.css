@@ -1,0 +1,24 @@
+.footer__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 450px;
+  }
+  
+  @media (max-width: 1024px) {
+    .footer__container {
+      width: 320px;
+    }
+  }
+  
+  @media (max-width: 720px) {
+    .footer__container  {
+      width: 100%;
+      }
+  }
+  
+  @media (max-width: 520px) {
+    .footer__container  {
+      align-items: baseline;
+      }
+  }

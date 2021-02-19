@@ -1,0 +1,9 @@
+.cards__about {
+    max-height: 186px;
+  }
+  
+  @media (max-width: 1024px) {
+    .cards__about {
+      max-height: 170px;
+    }
+  }

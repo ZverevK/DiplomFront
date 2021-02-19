@@ -1,0 +1,36 @@
+.menu__link {
+    text-decoration: none;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    color: inherit;
+    margin-right: 27px;
+    padding-bottom: 27px;
+    padding-top: 22px;
+    z-index: 3;
+  }
+  
+  @media (max-width: 1024px) {
+    .menu__link {
+      font-size: 16px;
+      line-height: 24px;
+      margin-right: 31px;
+      padding-bottom: 20px;
+    }
+  }
+  
+  @media (max-width: 1024px) {
+    .menu__link {
+      font-size: 18px;
+      line-height: 56px;
+    }
+  }
+  
+  @media (max-width: 520px) {
+    .menu__link {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }

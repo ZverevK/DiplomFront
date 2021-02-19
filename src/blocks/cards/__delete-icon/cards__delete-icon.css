@@ -1,0 +1,12 @@
+.cards__delete-icon {
+    background: url(../../../images/trash.svg) center no-repeat;
+    border: none;
+    width: 18px;
+    height: 20px;
+    box-sizing: border-box;
+    z-index: 1;
+  }
+  
+  .cards__delete-icon:hover {
+    background: url(../../../images/trash-black.svg) center no-repeat;
+  }

@@ -1,0 +1,32 @@
+@import url('./__container/author__container.css');
+@import url('./__description/author__description.css');
+@import url('./__image/author__image.css');
+@import url('./__text/author__text.css');
+@import url('./__title/author__title.css');
+
+.author {
+  background: #FFFFFF;
+  max-height: 540px;
+  display: flex;
+  margin: 103px 216px 58px 104px;
+}
+
+@media (max-width: 1024px) {
+  .author  {
+    margin: 24px 40px 29px 40px;
+  }
+}
+
+@media (max-width: 720px) {
+  .author  {
+    max-height: 720px;
+    margin-left: 16px;
+    margin-bottom: 62px;
+  }
+}
+
+@media (max-width: 520px) {
+  .author  {
+    margin-bottom: 43px;
+  }
+}

@@ -1,0 +1,30 @@
+.cards__description {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 22px;
+    max-width: 352px;
+    height: 110px;
+    margin-left: 20px;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    display: -webkit-box;
+  }
+  
+  @media (max-width: 1024px) {
+    .cards__description {
+      height: 88px;
+      margin-top: 10px;
+      margin-bottom: 12px;
+      margin-left: 18px;
+    }
+  }
+  
+  @media (max-width: 720px) {
+    .cards__description {
+      max-width: 256px;
+      margin-bottom: 10px;
+    }
+  }

@@ -1,0 +1,48 @@
+{
+    "name": "diplomfront",
+    "version": "1.0.0",
+    "description": "",
+    "main": "main.js",
+    "scripts": {
+        "dev": "cross-env NODE_ENV=development webpack-dev-server --mode development --open --watch",
+        "build": "cross-env NODE_ENV=production rimraf dist && webpack --mode production"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ZverevK/DiplomFront.git"
+    },
+    "author": "ZverevK",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/ZverevK/DiplomFront/issues"
+    },
+    "homepage": "https://github.com/ZverevK/DiplomFront#readme",
+    "devDependencies": {
+        "@babel/cli": "7.12.16",
+        "@babel/core": "7.12.16",
+        "@babel/preset-env": "7.12.16",
+        "autoprefixer": "9.8.5",
+        "babel-loader": "8.2.2",
+        "babel-plugin-transform-class-properties": "6.24.1",
+        "cross-env": "7.0.3",
+        "css-loader": "3.6.0",
+        "cssnano": "4.1.10",
+        "file-loader": "6.2.0",
+        "gh-pages": "3.1.0",
+        "html-webpack-plugin": "4.5.2",
+        "image-webpack-loader": "7.0.1",
+        "mini-css-extract-plugin": "1.3.7",
+        "optimize-css-assets-webpack-plugin": "5.0.4",
+        "postcss": "8.2.6",
+        "postcss-loader": "3.0.0",
+        "style-loader": "2.0.0",
+        "webpack": "4.44.2",
+        "webpack-cli": "3.3.12",
+        "webpack-dev-server": "3.11.2",
+        "webpack-md5-hash": "0.0.6"
+    },
+    "dependencies": {
+        "babel-polyfill": "6.26.0",
+        "core-js": "3.4.1"
+    }
+}

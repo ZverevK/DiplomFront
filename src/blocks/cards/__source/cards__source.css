@@ -1,0 +1,24 @@
+.cards__source {
+    font-family: Roboto Slab;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+    color: #B6BCBF;
+    margin-left: 20px;
+  }
+  
+  @media (max-width: 1024px) {
+    .cards__source {
+      margin-left: 18px;
+      margin-bottom: 0;
+    }
+  }
+  
+  @media (max-width: 720px) {
+    .cards__source{
+      margin-top: 10px;
+    }
+  }

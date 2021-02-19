@@ -1,0 +1,12 @@
+@import url('./_type/_black.css');
+@import url('./_type/_white.css');
+
+.menu__selected {
+    border-bottom: 2px solid;
+  }
+  
+  @media (max-width: 720px) {
+    .menu__selected  {
+      border-bottom: none;
+    }
+  }

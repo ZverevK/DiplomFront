@@ -1,0 +1,22 @@
+.search__subtitle {
+    font-style: normal;
+    font-family: 'Roboto', 'Helvetica', 'Arial', 'sans-serif';
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    color: #FFFFFF;
+    margin-bottom: 62px;
+  }
+  
+  @media (max-width: 1024px) {
+    .search__subtitle {
+      margin-bottom: 47px;
+      margin-top: 0;
+    }
+  }
+  
+  @media (max-width: 520px) {
+    .search__subtitle {
+      margin-bottom: 67px;
+    }
+  }
