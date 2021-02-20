@@ -104,6 +104,7 @@
                 </div>
                 <div class="results__preloader">
                     <i class="preloader__circle">
+                    </i>
                     <p class="preloader__message">Идет поиск новостей...</p>
                 </div>
                 <div class="empty__container">
@@ -157,12 +158,12 @@
                 <button class="form__button" disabled>Войти</button>
                 <p class="popup__container">
                     <span class="popup__text">или </span>
-                    <button class="popup__button">Зарегистрироваться</button>
+                    <button class="popup__button popup__button_registration">Зарегистрироваться</button>
                 </p>
             </form>
         </div>
     </div>
-    <div class="popup popup_registration  hidden">
+    <div class="popup popup_registration hidden">
         <div class="popup__content">
             <img src="<%=require('./images/close-white.svg')%>" alt="Иконка крестика" class="popup__close">
             <h3 class="popup__title">Регистрация</h3>
@@ -179,7 +180,7 @@
                 <button class="form__button" disabled>Зарегистрироваться</button>
                 <p class="popup__footer">
                     <span class="popup__text">или </span>
-                    <button class="popup__button">Войти</button>
+                    <button class="popup__button popup__button_login">Войти</button>
                 </p>
             </form>
         </div>
@@ -189,7 +190,7 @@
             <img src="<%=require('./images/close-white.svg')%>" alt="Иконка крестика" class="popup__close">
             <h3 class="popup__title">Пользователь успешно зарегистрирован!</h3>
             <form class="form" name="exit">
-                <button class="popup__button">Войти</button>
+                <button class="popup__button popup__button_login">Войти</button>
             </form>
         </div>
     </div>
