@@ -1,25 +1,23 @@
 @import url('./__subtitle/article__subtitle.css');
 @import url('./__title/articles__title.css');
 @import url('./__keyword/article__keyword.css');
-
-
 .articles {
-  display: flex;
-  flex-direction: column;
-  padding-top: 21px;
-  padding-left: 96px;
+    display: flex;
+    flex-direction: column;
+    padding-top: 21px;
+    padding-left: 96px;
 }
 
 @media (max-width: 1024px) {
-  .articles {
-    padding-top: 13px;
-    padding-left: 41px;
-  }
+    .articles {
+        padding-top: 13px;
+        padding-left: 41px;
+    }
 }
 
 @media (max-width: 520px) {
-  .articles {
-    padding-top: 0;
-    padding-left: 16px;
-  }
+    .articles {
+        padding-top: 0;
+        padding-left: 16px;
+    }
 }

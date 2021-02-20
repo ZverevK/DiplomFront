@@ -1,28 +1,29 @@
 .cards__image {
     width: 400px;
     height: 272px;
-    border-radius: 5%;
+    border-top-left-radius: 5%;
+    border-top-right-radius: 5%;
     margin-bottom: 20px;
-  }
-  
-  @media (max-width: 1024px) {
+}
+
+@media (max-width: 1024px) {
     .cards__image {
-      width: 224px;
-      height: 150px;
-      margin-bottom: 12px;
+        width: 224px;
+        height: 150px;
+        margin-bottom: 12px;
     }
-  }
-  
-  @media (max-width: 720px) {
+}
+
+@media (max-width: 720px) {
     .cards__image {
-      width: 288px;
-      height: 196px;
-      margin-bottom: 16px;
+        width: 288px;
+        height: 196px;
+        margin-bottom: 16px;
     }
-  }
-  
-  @media (max-width: 520px) {
+}
+
+@media (max-width: 520px) {
     .cards__image {
-      margin-bottom: 13px;
+        margin-bottom: 13px;
     }
-  }
+}

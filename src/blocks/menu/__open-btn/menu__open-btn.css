@@ -1,7 +1,6 @@
 .menu__open-btn {
     background-image: url(../../../images/menu-white.svg);
     display: none;
-    background: none;
     border: none;
     background-color: inherit;
     cursor: pointer;
@@ -10,10 +9,10 @@
     width: 24px;
     height: 24px;
     z-index: 1;
-  }
-  
-  @media (max-width: 720px) {
+}
+
+@media (max-width: 720px) {
     .menu__open-btn {
-      display: block;
+        display: block;
     }
-  }
+}

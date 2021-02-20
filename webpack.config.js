@@ -96,7 +96,7 @@ module.exports = {
             inject: false,
             hash: true,
             template: './src/main.html',
-            filename: 'main.html'
+            filename: 'index.html'
         }),
         new HtmlWebpackPlugin({
             inject: false,

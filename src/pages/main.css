@@ -12,6 +12,7 @@
 @import url('../blocks/footer/footer.css');
 @import url('../blocks/popup/popup.css');
 @import url('../blocks/form/form.css');
+@import url('../blocks/articles/articles.css');
 .hidden {
     display: none;
 }
