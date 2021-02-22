@@ -12,8 +12,8 @@ const PATHS = {
 
 module.exports = {
     entry: {
-        main: './src/main.js',
-        user: './src/user.js'
+        main: './src/js/main.js',
+        user: './src/js/user/user.js'
     },
     output: {
         path: path.resolve(__dirname, 'dist'),

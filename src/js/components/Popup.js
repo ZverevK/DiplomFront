@@ -3,8 +3,8 @@ export default class Popup {
         this.popup = popup;
     }
 
-    open() {
-        this.popup.classList.add('popup_is-opened');
+    openClose() {
+        this.popup.classList.toggle('popup_is-opened');
     }
 
     close(event) {
