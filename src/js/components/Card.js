@@ -1,5 +1,5 @@
-import toDate from '../utils/to-date.js';
-import USER_NAME from '../constants/USER_NAME.js';
+import toDate from '../utils/to-date';
+import USER_NAME from '../constants/USER_NAME';
 
 export default class Card {
     constructor(urlToImage, publishedAt, title, description, source, link, keyword, api, id) {
@@ -30,8 +30,8 @@ export default class Card {
     renderIcon = () => {
         if (!USER_NAME) {
             this._icon.onmouseover = () => {
-                this._message.classList.remove('element_not-visible');
-                setTimeout(() => this._message.classList.add('element_not-visible'), 1200);
+                this._message.classList.remove('hidden');
+                setTimeout(() => this._message.classList.add('hidden'), 1200);
             }
         }
     }

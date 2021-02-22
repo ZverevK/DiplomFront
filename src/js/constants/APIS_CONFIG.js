@@ -15,7 +15,7 @@ const NEWS_API_CONFIG = {
 };
 
 const API_CONFIG = {
-    url: 'https://api.students.nomoreparties.space',
+    url: 'https://api.diproject.students.nomoreparties.space',
     headers: {
         'Content-Type': 'application/json',
     }

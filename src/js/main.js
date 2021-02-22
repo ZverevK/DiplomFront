@@ -129,7 +129,7 @@ import {
                 .then(res => {
                     cardList.clear();
                     const cards = res.articles.map(card => newCard(card.urlToImage, card.publishedAt, card.title, card.description, card.source.name, card.url, keyword).create());
-                    cardList.renderInit(cards);
+                    cardList.addCard(cards);
                     loadResult(false);
                     cards.length === 0 ? notFoundResult(true) : showResult(true);
                     if (!USER_NAME) {
