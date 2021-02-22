@@ -1,0 +1,23 @@
+@import url('./_type/articles__keyword_bold.css');
+
+.articles__keyword {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 24px;
+    color: #1A1B22;
+  }
+  
+  @media (max-width: 1024px) {
+    .articles__keyword {
+      font-size: 14px;
+      margin-top: 0;
+    }
+  }
+  
+  @media (max-width: 520px) {
+    .articles__keyword {
+      font-size: 18px;
+    }
+  }

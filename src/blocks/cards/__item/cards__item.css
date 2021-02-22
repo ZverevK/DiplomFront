@@ -1,0 +1,53 @@
+.cards__item {
+    max-width: 400px;
+    max-height: 576px;
+    margin-bottom: 16px;
+    position: relative;
+    background-color: #FFFFFF;
+    border-radius: 5%;
+  }
+  
+  @media (min-width: 1440px) {
+    .cards__item:nth-of-type(3n+2) {
+      margin-right: 16px;
+      margin-left: 16px;
+    }
+  }
+  
+  @media (max-width: 1439px) and (min-width: 769px) {
+    .cards__item:nth-of-type(2n+1) {
+      margin-right: 16px;
+      margin-left: 16px;
+    }
+  }
+  
+  @media (max-width: 768px) and (min-width: 768px){
+    .cards__item:nth-of-type(3n+2) {
+      margin-right: 8px;
+      margin-left: 8px;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .cards__item:nth-of-type(2n+1) {
+      margin-left: 0;
+      margin-right: 8px;
+    }
+  }
+  
+  @media (max-width: 1024px) and (min-width: 721px) {
+    .cards__item {
+      max-width: 224px;
+      max-height: 420px;
+      margin-bottom: 8px;
+    }
+  }
+  
+  @media (max-width: 720px){
+    .cards__item {
+      max-width: 288px;
+      min-height: 440px;
+      max-height: 446px;
+      margin-bottom: 10px;
+    }
+  }

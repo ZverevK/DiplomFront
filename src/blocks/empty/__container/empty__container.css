@@ -1,0 +1,13 @@
+.empty__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 374px;
+  }
+  
+  @media (max-width: 1024px) {
+    .empty__container {
+      min-height: 300px;
+    }
+  }

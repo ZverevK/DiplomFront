@@ -1,0 +1,17 @@
+.cards__next-cards {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    margin-top: 47px;
+  }
+  
+  @media (max-width: 1024px) {
+    .cards__next-cards {
+      margin-top: 21px;
+    }
+  }
+  @media (max-width: 1024px) {
+    .cards__next-cards {
+      margin-bottom: 0;
+    }
+  }

@@ -1,0 +1,9 @@
+@import url('./_type/header_white.css');
+@import url('./__profile/header__profile.css');
+
+.header {
+  font-family: 'Inter', 'Helvetica', 'Arial', 'sans-serif';
+  background: url(../../images/main-image.png) no-repeat 50%;
+  background-size: cover;
+  height: 576px;
+}

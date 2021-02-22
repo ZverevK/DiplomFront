@@ -1,0 +1,28 @@
+.cards__save-button {
+    border: none;
+    width: 40px;
+    height: 40px;
+    background-color: #FFFFFF;
+    position: absolute;
+    top: 21px;
+    right: 29px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  
+  @media (max-width: 1024px) {
+    .cards__save-button {
+      top: 8px;
+      right: 8px;
+    }
+  }
+  
+  @media (max-width: 520px) {
+    .cards__save-button {
+      top: 14px;
+      right: 12px;
+    }
+  }

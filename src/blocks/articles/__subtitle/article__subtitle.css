@@ -1,0 +1,19 @@
+.articles__subtitle {
+    font-family: Roboto Slab;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 40px;
+    line-height: 46px;
+    color: #1A1B22;
+    margin-top: 16px;
+    max-width: 530px;
+    margin-bottom: 10px;
+  }
+  
+  @media (max-width: 1024px) {
+    .articles__subtitle  {
+      font-size: 30px;
+      line-height: 34px;
+      max-width: 336px;
+    }
+  }

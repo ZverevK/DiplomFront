@@ -1,0 +1,12 @@
+.cards__save-icon {
+    background: url(../../../images/save.svg) center no-repeat;
+    border: none;
+    width: 18px;
+    height: 20px;
+    box-sizing: border-box;
+    z-index: 1;
+  }
+  
+  .cards__save-icon:hover {
+    background: url(../../../images/save-hover.svg) center no-repeat;
+  }

@@ -1,0 +1,16 @@
+.search__container {
+    width: 608px;
+    margin: auto;
+  }
+  
+  @media (max-width: 1024px) {
+    .search__container {
+      width: 448px;
+    }
+  }
+  
+  @media (max-width: 520px) {
+    .search__container {
+      width: calc(100% - 36px);
+    }
+  }

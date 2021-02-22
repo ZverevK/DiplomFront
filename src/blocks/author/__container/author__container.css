@@ -1,0 +1,19 @@
+.author__container {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    max-width: 1120px;
+  }
+  
+  @media (max-width: 650px) {
+    .author__container {
+      flex-wrap: wrap;
+      width: 80%;
+    }
+  }
+  
+  @media (max-width: 520px) {
+    .author__container {
+      width: 100%;
+    }
+  }

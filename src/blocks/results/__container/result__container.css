@@ -1,0 +1,16 @@
+.results__container {
+    min-height: 576px;
+    padding: 46px 104px;
+  }
+  
+  @media (max-width: 1024px) {
+    .results__container {
+      padding: 33px 40px;
+    }
+  }
+  
+  @media (max-width: 520px) {
+    .results__container {
+      padding: 29px 17px;
+    }
+  }

@@ -1,0 +1,16 @@
+.header.header__profile {
+    background: none;
+    height: 386px;
+  }
+  
+  @media (max-width: 1024px) {
+    .header.header__profile {
+      height: 270px;
+    }
+  }
+  
+  @media (max-width: 520px) {
+    .header.header__profile {
+      height: 305px;
+    }
+  }

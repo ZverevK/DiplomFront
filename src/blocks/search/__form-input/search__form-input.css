@@ -1,0 +1,30 @@
+
+.search__form-input {
+    width: 608px;
+    height: 64px;
+    background: #FFFFFF;
+    border: 1px solid #D1D2D6;
+    box-sizing: border-box;
+    backdrop-filter: blur(8px);
+    border-radius: 100px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 22px;
+    padding-left: 24px;
+  }
+  
+  @media (max-width: 1024px) {
+    .search__form-input {
+      width: 448px;
+      height: 56px;
+    }
+  }
+  
+  @media (max-width: 520px) {
+    .search__form-input {
+      width: 288px;
+      margin: 58px auto 20px;
+    }
+  }

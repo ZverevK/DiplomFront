@@ -1,0 +1,26 @@
+.author__image {
+    border-radius: 1000px;
+    width: 464px;
+    height: 464px;
+    object-fit: cover;
+    object-position: top;
+    margin-right: 56px;
+  }
+  
+  @media (max-width: 1024px) {
+    .author__image {
+      width: 232px;
+      height: 232px;
+      margin-right: 32px;
+      margin-top: 17px;
+    }
+  }
+  @media (max-width: 520px) {
+    .author__image {
+      width: 272px;
+      height: 272px;
+      margin-right: 0;
+      margin-bottom: 20px;
+      margin-left: 20px;
+    }
+  }
