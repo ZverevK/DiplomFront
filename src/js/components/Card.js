@@ -71,46 +71,54 @@ export default class Card {
     }
 
     create() {
-        const template = `
-      <div class="cards__item">
-        <p class="cards__message hidden">Войдите, чтобы сохранять статьи</p>
-        <div class="cards__save-button">
-          <button class="cards__save-icon"></button>
-      </div>
-      <a href="" target="_blank">
-        <img class="cards__image" src="" alt="">
-      </a>
-      <span class="cards__date"></span>
-      <div class="cards__text-container">
-        <h3 class="cards__title"></h3>
-        <p class="cards_description"></p>
-      </div>
-      <p class="cards__source"></p>
-    </div>
-      `;
-        const element = document.createElement('div');
-        element.insertAdjacentHTML('afterbegin', template);
+        const cardItem = document.createElement('div');
+        cardItem.classList.add('cards__item');
 
-        this._view = element.firstElementChild;
+        const cardBtn = document.createElement('div');
+        cardBtn.classList.add('cards__save-button');
 
-        if (this.urlToImage) {
-            this._view.querySelector('.cards__image').src = this.urlToImage
-        } else {
-            this._view.querySelector('.cards__image').src = 'https://zakaztxt.ru/wp-content/uploads/2017/01/news.jpg';
-            this.urlToImage = 'https://zakaztxt.ru/wp-content/uploads/2017/01/news.jpg';
-        }
+        const cardIcon = document.createElement('button');
+        cardIcon.classList.add('cards__save-icon');
 
-        this._view.querySelector('.cards__date').textContent = toDate(this.publishedAt);
-        this._view.querySelector('.cards__title').textContent = this.title;
-        this._view.querySelector('a').href = this.link;
+        const cardLink = document.createElement('a');
+        cardLink.href = this.link;
 
-        this._view.querySelector('.cards_description').textContent = this.description;
-        this._view.querySelector('.cards__source').textContent = this.source;
-        this._icon = this._view.querySelector('.cards__save-button');
-        this._message = this._view.querySelector('.cards__message');
-        this._setEventListeners();
-        this.renderIcon();
-        return this._view;
+        const cardImg = document.createElement('img');
+        cardImg.classList.add('cards__image');
+        cardImg.src = this.urlToImage;
+
+        const cardDate = document.createElement('p');
+        cardDate.classList.add('cards__date');
+        cardDate.textContent = toDate(this.publishedAt);
+
+        const cardAbout = document.createElement('div');
+        cardAbout.classList.add('cards__about');
+
+        const cardTitle = document.createElement('h3');
+        cardTitle.classList.add('cards__title');
+        cardTitle.textContent = this.title;
+
+        const cardDescription = document.createElement('p');
+        cardDescription.classList.add('cards__description');
+        cardDescription.textContent = this.description;
+
+        const cardSource = document.createElement('p');
+        cardSource.classList.add('cards__source');
+        cardSource.textContent = this.source;
+
+        cardBtn.appendChild(cardIcon);
+        cardLink.appendChild(cardImg);
+        cardAbout.appendChild(cardTitle);
+        cardAbout.appendChild(cardDescription);
+        cardItem.appendChild(cardBtn);
+        cardItem.appendChild(cardLink);
+        cardItem.appendChild(cardDate);
+        cardItem.appendChild(cardAbout);
+        cardItem.appendChild(cardSource);
+
+        this.cardElement = cardItem;
+        this._setEventListeners;
+        return cardItem;
     }
 
     _setEventListenersPersonal = () => {

@@ -61,9 +61,9 @@ import {
     new FormValidator(loginForm);
 
     // functions
-    function newCard(urlToImage, publishedAt, title, description, source, link, keyword) {
-        return new Card(urlToImage, publishedAt, title, description, source, link, keyword, api);
-    };
+    // function newCard(urlToImage, publishedAt, title, description, source, link, keyword) {
+    //     return new Card(urlToImage, publishedAt, title, description, source, link, keyword, api);
+    // };
 
     function loadResult(show) {
         show ? preloader.classList.remove('hidden') : preloader.classList.add('hidden')
@@ -128,14 +128,12 @@ import {
             newsApi.getNews()
                 .then(res => {
                     cardList.clear();
-                    const cards = res.articles.map(card => newCard(card.urlToImage, card.publishedAt, card.title, card.description, card.source.name, card.url, keyword).create());
-                    cardList.addCard(cards);
+                    res.articles.forEach(card => {
+                        const newCard = new Card(card.urlToImage, card.publishedAt, card.title, card.description, card.source.name, card.url, keyword);
+                        showResult(true);
+                        return cardList.addCard(newCard.create());
+                    })
                     loadResult(false);
-                    cards.length === 0 ? notFoundResult(true) : showResult(true);
-                    if (!USER_NAME) {
-                        const saveButtons = document.querySelectorAll('.cards__save-icon');
-                        saveButtons.forEach(button => button.setAttribute('disabled', true));
-                    }
                 })
                 .catch((err) => {
                     console.log(err.message);
