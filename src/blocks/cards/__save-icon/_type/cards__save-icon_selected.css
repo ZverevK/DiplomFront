@@ -1,3 +1,8 @@
 .cards__save-icon_selected {
     background: url(../../../../images/save-marked.svg) center no-repeat;
+    border: none;
+    width: 18px;
+    height: 20px;
+    box-sizing: border-box;
+    z-index: 1;
 }

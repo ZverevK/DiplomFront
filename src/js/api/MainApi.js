@@ -1,7 +1,8 @@
+import TOKEN from '../constants/TOKEN';
+
 export class MainApi {
     constructor(config) {
         this.url = config.url;
-        this.headers = config.headers;
     }
 
     async _checkRes(res) {
@@ -15,7 +16,9 @@ export class MainApi {
     signin(email, password) {
         return fetch(`${this.url}/signin`, {
                 method: 'POST',
-                headers: this.headers,
+                headers: {
+                    'Content-Type': 'application/json',
+                },
                 credentials: 'include',
                 body: JSON.stringify({
                     email: email,
@@ -34,7 +37,9 @@ export class MainApi {
     signup(name, email, password) {
         return fetch(`${this.url}/signup`, {
                 method: 'POST',
-                headers: this.headers,
+                headers: {
+                    'Content-Type': 'application/json',
+                },
                 body: JSON.stringify({
                     name: name,
                     email: email,
@@ -52,7 +57,10 @@ export class MainApi {
 
     getUserData() {
         return fetch(`${this.url}/users/me`, {
-                headers: this.headers,
+                headers: {
+                    'Content-Type': 'application/json',
+                    'authorization': `Bearer ${TOKEN}`
+                },
                 credentials: 'include',
             })
             .then(res => {
@@ -70,6 +78,7 @@ export class MainApi {
                 credentials: 'include',
                 headers: {
                     'Content-Type': 'application/json',
+                    'authorization': `Bearer ${TOKEN}`
                 },
                 body: JSON.stringify({
                     title: obj.title,
@@ -88,6 +97,10 @@ export class MainApi {
     getArticles() {
         return fetch(`${this.url}/articles`, {
                 method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'authorization': `Bearer ${TOKEN}`
+                },
                 credentials: 'include',
             })
             .then((res) => this._checkRes(res))
@@ -100,6 +113,7 @@ export class MainApi {
                 credentials: 'include',
                 headers: {
                     'Content-Type': 'application/json',
+                    'authorization': `Bearer ${TOKEN}`
                 },
             })
             .then((res) => this._checkRes(res))

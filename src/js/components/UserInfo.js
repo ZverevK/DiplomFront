@@ -1,15 +1,17 @@
+import { declOfNum } from '../utils/words';
+
 export default class UserInfo {
 
     constructor(keywordsArr) {
         this._title = document.querySelector('.articles__subtitle');
-        this._text = document.querySelector('.articles__keywords');
-        this._name = localStorage.getItem('username');
+        this._text = document.querySelector('.articles__keyword');
+        this._name = localStorage.getItem('user');
         this._keywordsArr = keywordsArr;
         this._keywordLength = this._keywordsArr.length;
-        this._wordOne = document.querySelector('.articles__keywords_word1');
-        this._wordTwo = document.querySelector('.articles__keywords_word2');
-        this._wordTree = document.querySelector('.articles__keywords_word3');
-        this._wordFour = document.querySelector('.articles__keywords_word4');
+        this._wordOne = document.querySelector('.articles__keyword_word1');
+        this._wordTwo = document.querySelector('.articles__keyword_word2');
+        this._wordTree = document.querySelector('.articles__keyword_word3');
+        this._wordFour = document.querySelector('.articles__keyword_word4');
     }
 
     render = () => {

@@ -21,8 +21,8 @@ export default class Card {
         event.stopPropagation();
         this.api.deleteArticle(this._id)
             .then(res => {
-                this._removeEventListenersPersonal();
-                this._view.remove();
+                this._removeEventListenersSaved();
+                this.cardElement.remove();
             })
             .catch((err) => console.log(err));
     }
@@ -50,14 +50,16 @@ export default class Card {
             };
             this.api.addArticle(obj)
                 .then((res) => {
-                    this._id = res.article._id;
-                    this._view.querySelector('.cards__save-icon').classList.add('cards__save-icon_selected');
+                    this._id = res._id;
+                    event.target.closest('.cards__save-icon').classList.add('cards__save-icon_selected');
+                    event.target.closest('.cards__save-icon').classList.remove('cards__save-icon');
                     this._isSaved = true;
                 })
                 .catch((err) => console.log(err));
         } else {
             this._unSave(event);
-            this._view.querySelector('.cards__save-icon').classList.remove('cards__save-icon_selected');
+            event.target.closest('.cards__save-icon_selected').classList.add('cards__save-icon');
+            event.target.closest('.cards__save-icon').classList.remove('cards__save-icon_selected');
             this._isSaved = false;
         }
     }
@@ -65,9 +67,60 @@ export default class Card {
     _unSave() {
         this.api.deleteArticle(this._id)
             .then(res => {
-                this._removeEventListenersPersonal();
+                this._removeEventListenersSaved();
             })
             .catch((err) => console.log(err));
+    }
+
+    createUserArticles() {
+        const cardItem = document.createElement('div');
+        cardItem.classList.add('cards__item');
+
+        const cardBtn = document.createElement('div');
+        cardBtn.classList.add('cards__save-button');
+
+        const cardIcon = document.createElement('button');
+        cardIcon.classList.add('cards__delete-icon');
+
+        const cardLink = document.createElement('a');
+        cardLink.href = this.link;
+
+        const cardImg = document.createElement('img');
+        cardImg.classList.add('cards__image');
+        cardImg.src = this.urlToImage;
+
+        const cardDate = document.createElement('p');
+        cardDate.classList.add('cards__date');
+        cardDate.textContent = toDate(this.publishedAt);
+
+        const cardAbout = document.createElement('div');
+        cardAbout.classList.add('cards__about');
+
+        const cardTitle = document.createElement('h3');
+        cardTitle.classList.add('cards__title');
+        cardTitle.textContent = this.title;
+
+        const cardDescription = document.createElement('p');
+        cardDescription.classList.add('cards__description');
+        cardDescription.textContent = this.description;
+
+        const cardSource = document.createElement('p');
+        cardSource.classList.add('cards__source');
+        cardSource.textContent = this.source;
+
+        cardBtn.appendChild(cardIcon);
+        cardLink.appendChild(cardImg);
+        cardAbout.appendChild(cardTitle);
+        cardAbout.appendChild(cardDescription);
+        cardItem.appendChild(cardBtn);
+        cardItem.appendChild(cardLink);
+        cardItem.appendChild(cardDate);
+        cardItem.appendChild(cardAbout);
+        cardItem.appendChild(cardSource);
+
+        this.cardElement = cardItem;
+        this._setEventListenersSaved();
+        return cardItem;
     }
 
     create() {
@@ -117,23 +170,23 @@ export default class Card {
         cardItem.appendChild(cardSource);
 
         this.cardElement = cardItem;
-        this._setEventListeners;
+        this._setEventListeners();
         return cardItem;
     }
 
-    _setEventListenersPersonal = () => {
-        this._view.querySelector('.cards__save-button').addEventListener('click', this.delete);
+    _setEventListenersSaved = () => {
+        this.cardElement.querySelector('.cards__save-button').addEventListener('click', this.delete);
     }
 
-    _removeEventListenersPersonal = () => {
-        this._view.querySelector('.cards__save-button').removeEventListener('click', this.delete);
+    _removeEventListenersSaved = () => {
+        this.cardElement.querySelector('.cards__save-button').removeEventListener('click', this.delete);
     }
 
     _setEventListeners = () => {
-        this._view.querySelector('.cards__save-icon').addEventListener('click', this.save);
+        this.cardElement.querySelector('.cards__save-icon').addEventListener('click', this.save);
     }
 
     _removeEventListeners = () => {
-        this._view.querySelector('.cards__save-icon').removeEventListener('click', this.save);
+        this.cardElement.querySelector('.cards__save-icon').removeEventListener('click', this.save);
     }
 }

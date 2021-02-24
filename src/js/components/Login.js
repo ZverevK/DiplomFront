@@ -14,6 +14,8 @@ export default class Login {
         this.api.signin(this.form.elements.email.value, this.form.elements.password.value)
             .then(res => {
                 this.popup.openClose();
+                localStorage.setItem('token', res.token);
+                console.log(res.token)
                 localStorage.setItem('user', res.name);
                 this.loginBtn.classList.add('hidden');
                 this.savedArticles.classList.remove('hidden');

@@ -1,5 +1,6 @@
 // Styles
 import '../pages/main.css';
+import '../pages/user.css';
 
 // Components
 import FormValidator from './components/FormValidator.js';
@@ -10,6 +11,7 @@ import { MainApi } from './api/MainApi.js';
 import NewsApi from './api/NewsApi.js';
 import CardList from './components/CardList.js';
 import Card from './components/Card.js';
+import USER_NAME from './constants/USER_NAME';
 
 // DOM elements
 import {
@@ -61,9 +63,22 @@ import {
     new FormValidator(loginForm);
 
     // functions
-    // function newCard(urlToImage, publishedAt, title, description, source, link, keyword) {
-    //     return new Card(urlToImage, publishedAt, title, description, source, link, keyword, api);
-    // };
+
+
+    function newCard(urlToImage, publishedAt, title, description, source, link, keyword) {
+        return new Card(urlToImage, publishedAt, title, description, source, link, keyword, api);
+    }
+
+    function auth() {
+        api.getUserData()
+            .then(res => {
+                logoutBtn.querySelector('.user').textContent = res.name;
+                registrationPopupOnBtn.classList.add('hidden');
+            })
+            .catch((err) => {
+                not_auth();
+            })
+    };
 
     function loadResult(show) {
         show ? preloader.classList.remove('hidden') : preloader.classList.add('hidden')
@@ -89,6 +104,23 @@ import {
     }
 
     // listeners
+    function not_auth() {
+        registrationPopupOnBtn.classList.add('hidden');
+        savedArticles.classList.add('hidden');
+        logoutMenu.classList.remove('hidden');
+    };
+
+    function auth() {
+        api.getUserData()
+            .then(res => {
+                logoutMenu.querySelector('.user').textContent = res.name;
+                registrationPopupOnBtn.classList.add('hidden');
+            })
+            .catch((err) => {
+                not_auth();
+            })
+    };
+
     loginPopupOnBtn.addEventListener('click', () => {
         loginPopup.openClose();
     });
@@ -108,6 +140,7 @@ import {
         loginPopup.openClose();
     });
     logoutBtn.addEventListener('click', () => {
+        localStorage.removeItem('token');
         localStorage.removeItem('user');
         logoutMenu.classList.add('hidden');
         savedArticles.classList.add('hidden');
@@ -128,17 +161,24 @@ import {
             newsApi.getNews()
                 .then(res => {
                     cardList.clear();
-                    res.articles.forEach(card => {
-                        const newCard = new Card(card.urlToImage, card.publishedAt, card.title, card.description, card.source.name, card.url, keyword);
-                        showResult(true);
-                        return cardList.addCard(newCard.create());
-                    })
+                    const cards = res.articles.map(card => newCard(card.urlToImage, card.publishedAt, card.title, card.description, card.source.name, card.url, keyword).create());
+                    cardList.renderInit(cards);
                     loadResult(false);
+                    res.articles.length === 0 ? notFoundResult(true) : showResult(true);
+                    if (!USER_NAME) {
+                        const saveButtons = document.querySelectorAll('.cards__save-icon');
+                        saveButtons.forEach(button => button.setAttribute('disabled', true));
+                    }
                 })
                 .catch((err) => {
                     console.log(err.message);
                 });
         }
     });
-
+    if (USER_NAME) {
+        loginPopupOnBtn.classList.add('hidden');
+        savedArticles.classList.remove('hidden');
+        logoutMenu.classList.remove('hidden');
+        logoutMenu.querySelector('.user').textContent = USER_NAME;
+    }
 })();

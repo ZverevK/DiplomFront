@@ -2,7 +2,7 @@ export default class CardList {
 
     constructor(conteiner) {
         this.conteiner = conteiner;
-        this._button = document.querySelector('.cards__button-more');
+        this._button = document.querySelector('.cards__button');
         this.articlesColumns = 3;
     }
 
@@ -24,17 +24,13 @@ export default class CardList {
     }
 
     renderParts = () => {
-        if (this.cards.length > this.articlesColumns) {
-            for (let i = 0; i < this.articlesColumns; i++) {
+        if (this.cards.length > 3) {
+            for (let i = 0; i < 3; i++) {
                 this.addCard(this.cards[0]);
                 this.cards.shift();
             }
             this.showMore();
         } else {
-            for (let i = 0; i < this.articlesArray.length; i++) {
-                this.addCard(this.articlesArray[0]);
-                this.cards.shift();
-            }
             this.hideShowMore();
         }
     }
