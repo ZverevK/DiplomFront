@@ -29,6 +29,10 @@ import {
     loginPopupOnBtnCompleteForm,
     searchButton,
     searchInput,
+    mobileMenu,
+    mobileMenuClose,
+    menu,
+    menuList,
 } from './constants/DOMelements.js';
 
 // API's config
@@ -63,22 +67,9 @@ import {
     new FormValidator(loginForm);
 
     // functions
-
-
     function newCard(urlToImage, publishedAt, title, description, source, link, keyword) {
         return new Card(urlToImage, publishedAt, title, description, source, link, keyword, api);
     }
-
-    function auth() {
-        api.getUserData()
-            .then(res => {
-                logoutBtn.querySelector('.user').textContent = res.name;
-                registrationPopupOnBtn.classList.add('hidden');
-            })
-            .catch((err) => {
-                not_auth();
-            })
-    };
 
     function loadResult(show) {
         show ? preloader.classList.remove('hidden') : preloader.classList.add('hidden')
@@ -103,13 +94,6 @@ import {
         }
     }
 
-    // listeners
-    function not_auth() {
-        registrationPopupOnBtn.classList.add('hidden');
-        savedArticles.classList.add('hidden');
-        logoutMenu.classList.remove('hidden');
-    };
-
     function auth() {
         api.getUserData()
             .then(res => {
@@ -120,7 +104,7 @@ import {
                 not_auth();
             })
     };
-
+    // listeners
     loginPopupOnBtn.addEventListener('click', () => {
         loginPopup.openClose();
     });
@@ -175,9 +159,28 @@ import {
                 });
         }
     });
+
+    mobileMenu.addEventListener('click', () => {
+        menu.classList.add('menu__container-mobile');
+        menu.classList.add('menu__container-mobile_black');
+        menuList.classList.add('menu__list-mobile');
+        menuList.classList.add('menu__list-mobile_black');
+        mobileMenu.classList.add('hidden');
+        mobileMenuClose.classList.remove('hidden');
+    });
+    mobileMenuClose.addEventListener('click', () => {
+        menu.classList.remove('menu__container-mobile');
+        menu.classList.remove('menu__container-mobile_black');
+        menuList.classList.remove('menu__list-mobile');
+        menuList.classList.remove('menu__list-mobile_black');
+        mobileMenu.classList.remove('hidden');
+        mobileMenuClose.classList.add('hidden');
+    });
+    // Page start function
     if (USER_NAME) {
-        auth();
-    } else {
-        not_auth();
+        logoutMenu.classList.remove('hidden');
+        savedArticles.classList.remove('hidden');
+        loginPopupOnBtn.classList.add('hidden');
+        logoutBtn.querySelector('.user').textContent = USER_NAME;
     }
 })();

@@ -2,7 +2,10 @@
 const savedArticles = document.querySelector('.menu__saved-articles');
 const logoutMenu = document.querySelector('.menu__logout');
 const logoutBtn = document.querySelector('.menu__logout-btn');
-
+const mobileMenu = document.querySelector('.menu__open-btn');
+const mobileMenuClose = document.querySelector('.menu__close-btn');
+const menu = document.querySelector('.menu__container');
+const menuList = document.querySelector('.menu__list');
 // loginPopup
 const loginPopupOnBtn = document.querySelector('.menu__button');
 const loginPopupWindow = document.querySelector('.popup__login');
@@ -40,4 +43,8 @@ export {
     loginPopupOnBtnCompleteForm,
     searchButton,
     searchInput,
+    mobileMenu,
+    mobileMenuClose,
+    menu,
+    menuList,
 }
