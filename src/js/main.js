@@ -176,9 +176,8 @@ import {
         }
     });
     if (USER_NAME) {
-        loginPopupOnBtn.classList.add('hidden');
-        savedArticles.classList.remove('hidden');
-        logoutMenu.classList.remove('hidden');
-        logoutMenu.querySelector('.user').textContent = USER_NAME;
+        auth();
+    } else {
+        not_auth();
     }
 })();
