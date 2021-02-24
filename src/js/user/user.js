@@ -7,6 +7,12 @@ import CardList from '../components/CardList';
 import UserInfo from '../components/UserInfo.js';
 import { logoutBtn } from '../constants/DOMelements';
 import { toUpperCaseFirstCharacter } from '../utils/words';
+import {
+    mobileMenu,
+    mobileMenuClose,
+    menu,
+    menuList,
+} from '../constants/DOMelements.js';
 
 (function() {
     const api = new MainApi(API_CONFIG);
@@ -60,4 +66,21 @@ import { toUpperCaseFirstCharacter } from '../utils/words';
     } else {
         not_auth();
     }
+
+    mobileMenu.addEventListener('click', () => {
+        menu.classList.add('menu__container-mobile');
+        menu.classList.add('menu__container-mobile_black');
+        menuList.classList.add('menu__list-mobile');
+        menuList.classList.add('menu__list-mobile_black');
+        mobileMenu.classList.add('hidden');
+        mobileMenuClose.classList.remove('hidden');
+    });
+    mobileMenuClose.addEventListener('click', () => {
+        menu.classList.remove('menu__container-mobile');
+        menu.classList.remove('menu__container-mobile_black');
+        menuList.classList.remove('menu__list-mobile');
+        menuList.classList.remove('menu__list-mobile_black');
+        mobileMenu.classList.remove('hidden');
+        mobileMenuClose.classList.add('hidden');
+    });
 })();

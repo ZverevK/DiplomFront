@@ -5,6 +5,7 @@ const logoutBtn = document.querySelector('.menu__logout-btn');
 const mobileMenu = document.querySelector('.menu__open-btn');
 const mobileMenuClose = document.querySelector('.menu__close-btn');
 const menu = document.querySelector('.menu__container');
+const menuUser = document.querySelector('.menu__open-btn-user');
 const menuList = document.querySelector('.menu__list');
 // loginPopup
 const loginPopupOnBtn = document.querySelector('.menu__button');
