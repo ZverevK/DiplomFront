@@ -48,4 +48,5 @@ export {
     mobileMenuClose,
     menu,
     menuList,
+    menuUser
 }

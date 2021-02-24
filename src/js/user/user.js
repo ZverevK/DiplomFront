@@ -12,6 +12,7 @@ import {
     mobileMenuClose,
     menu,
     menuList,
+    menuUser,
 } from '../constants/DOMelements.js';
 
 (function() {
@@ -67,20 +68,20 @@ import {
         not_auth();
     }
 
-    mobileMenu.addEventListener('click', () => {
+    menuUser.addEventListener('click', () => {
         menu.classList.add('menu__container-mobile');
-        menu.classList.add('menu__container-mobile_black');
+        menu.classList.add('menu__container-mobile_white');
         menuList.classList.add('menu__list-mobile');
-        menuList.classList.add('menu__list-mobile_black');
-        mobileMenu.classList.add('hidden');
+        menuList.classList.add('menu__list-mobile_white');
+        menuUser.classList.add('hidden');
         mobileMenuClose.classList.remove('hidden');
     });
     mobileMenuClose.addEventListener('click', () => {
         menu.classList.remove('menu__container-mobile');
-        menu.classList.remove('menu__container-mobile_black');
+        menu.classList.remove('menu__container-mobile_white');
         menuList.classList.remove('menu__list-mobile');
-        menuList.classList.remove('menu__list-mobile_black');
-        mobileMenu.classList.remove('hidden');
+        menuList.classList.remove('menu__list-mobile_white');
+        menuUser.classList.remove('hidden');
         mobileMenuClose.classList.add('hidden');
     });
 })();
