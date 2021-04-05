@@ -1,7 +1,7 @@
 @import url('./_type/menu__container_black.css');
-
+@import url('./_type/menu__container_white.css');
 .menu__container {
-    display:flex;
+    display: flex;
     justify-content: space-between;
     align-items: center;
     padding-left: 104px;
@@ -9,20 +9,20 @@
     height: 80px;
     border-bottom: 1px solid rgba(196, 196, 196, 0.01);
     box-shadow: inset 0px -1px 0px rgba(255, 255, 255, 0.2);
-  }
-  
-  @media (max-width: 1024px) {
+}
+
+@media (max-width: 1024px) {
     .menu__container {
-      height: 66px;
-      padding-left: 40px;
-      padding-right: 30px;
+        height: 66px;
+        padding-left: 40px;
+        padding-right: 30px;
     }
-  }
-  
-  @media (max-width: 520px) {
+}
+
+@media (max-width: 520px) {
     .menu__container {
-      height: 60px;
-      padding-left: 16px;
-      padding-right: 17px;
+        height: 60px;
+        padding-left: 16px;
+        padding-right: 17px;
     }
-  }
+}

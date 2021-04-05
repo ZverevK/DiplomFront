@@ -1,5 +1,4 @@
 .menu__close-btn {
-    display: none;
     background: none;
     border: none;
     background-color: inherit;
@@ -10,4 +9,4 @@
     width: 24px;
     height: 24px;
     z-index: 1;
-  }
+}

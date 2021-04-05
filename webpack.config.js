@@ -12,8 +12,8 @@ const PATHS = {
 
 module.exports = {
     entry: {
-        main: './src/main.js',
-        user: './src/user.js'
+        main: './src/js/main.js',
+        user: './src/js/user/user.js'
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -96,13 +96,15 @@ module.exports = {
             inject: false,
             hash: true,
             template: './src/main.html',
-            filename: 'index.html'
+            filename: 'index.html',
+            chunks: ['main'],
         }),
         new HtmlWebpackPlugin({
             inject: false,
             hash: true,
             template: './src/user.html',
-            filename: 'user.html'
+            filename: 'user.html',
+            chunks: ['user'],
         }),
         new WebpackMd5Hash(),
         new webpack.DefinePlugin({
